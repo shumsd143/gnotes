@@ -70,6 +70,7 @@ class Loginbody extends Component{
             lemail:this.state.lemail,
             lpass:this.state.lpass
         })
+        console.log('name',this.state.suname)
     }
     csemail=(event)=>{
         this.setState({
@@ -81,6 +82,7 @@ class Loginbody extends Component{
             lemail:this.state.lemail,
             lpass:this.state.lpass
         })
+        console.log('email',this.state.semail)
     }
     cspassword=(event)=>{
         this.setState({
@@ -92,9 +94,10 @@ class Loginbody extends Component{
             lemail:this.state.lemail,
             lpass:this.state.lpass
         })
+        console.log('pass',this.state.spass)
     }
     registerer=()=>{
-        if(this.state.semail=='' || this.state.spass=='' || this.state.name==''){
+        if(this.state.semail=='' || this.state.spass=='' || this.state.suname==''){
             alert('Email, Name or password cannot be empty')
             return
         }
