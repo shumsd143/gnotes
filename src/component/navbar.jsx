@@ -5,7 +5,7 @@ import Bodyallfile from './Bodyallfile';
 import Uploader from './uploader';
 import Forum from './forum';
 import Loginbody from './loginbody';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { ButtonToggle, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import {Navbar,Nav} from 'react-bootstrap';
 
@@ -78,7 +78,6 @@ class Navbarer extends Component{
     clicksign=()=>{
         if(this.state.signvalue=='Signout'){
             var c=window.confirm('Are you sure you want to log out')
-            console.log(c)
             if(c==true){
                 this.setState({
                     signup:false,
@@ -173,6 +172,7 @@ class Navbarer extends Component{
             )
         }
         else{
+            const externalCloseBtn =<ButtonToggle color="danger" style={{ position: 'absolute', right: '30%'}} onClick={this.toggle}>&times;</ButtonToggle>
             return (
                 <div>
                     <Navbar bg="light" expand="lg" sticky="top">
@@ -185,14 +185,10 @@ class Navbarer extends Component{
                             <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
                         </Nav>
                         <Nav.Link href="" onClick={this.clicksign}>Hi {name} , {signvalue}</Nav.Link>
-                        <Modal isOpen={signup}>
-                        <ModalHeader><center>Signup Form</center></ModalHeader>
-                        <ModalBody>  
+                        <Modal className="bodyblowmodal" isOpen={signup} toggle={this.toggle} external={externalCloseBtn}>
+                        <ModalBody className="modalbackground">  
                             <Loginbody updatesign={(loginname)=>this.loginnamefun(loginname)} />
                         </ModalBody>
-                            <ModalFooter>
-                                <Button color="secondary" onClick={this.toggle}>Close</Button>
-                            </ModalFooter>
                         </Modal>
                     </Navbar.Collapse>
                     </Navbar>

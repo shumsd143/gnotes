@@ -10,20 +10,21 @@
 
 .align {
 	height: 100%;
+	width: 100%;
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding-bottom: 8px;
+	padding-bottom: 0px;
+	padding-top: 0px;
 }
 
 .newcard {
-	margin-top: 28px;
 	height: 100%;
-	max-height: 446px;
-	width: 396px;
+	width: 100%;
 	background: #121212;
-	border: 1px solid #373737;
+	border: 1px solid #121212;
 	border-radius: 10px;
 	overflow: hidden;
 	transition: max-height 0.2s;
@@ -37,7 +38,7 @@
 	width: 100%;
 	display: flex;
 	height: 72px;
-	border-bottom: 1px solid #373737;
+	border-bottom: 1px solid #121212;
 	justify-content: space-between;
 }
 
@@ -77,6 +78,7 @@
 .form {
 	width: 100%;
 	height: 100%;
+	max-height: 450px;
 	flex-shrink: 0;
 	padding: 44px 38px;
 	display: flex;
@@ -119,15 +121,24 @@
 	display: block;
 	background: #00FF5C;
 	padding: 14px 52px;
-	border-radius: 12px;
+	border-radius: 10px;
 	color: #003B15;
 	font-weight: 700;
 	font-size: 21px;
 	cursor: pointer;
 }
 
-
-
+.modalbackground{
+	background: #121212;
+	border: 0px solid #121212;
+	border-radius: 2px;
+}
+.bodyblowmodal{
+	background: #121212;
+	border: 1px solid #121212;
+	border-radius: 10px;
+	opacity: 1;
+}
 
 
 

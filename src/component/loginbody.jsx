@@ -1,11 +1,16 @@
 import axios from 'axios';
 import React,{ Component } from 'react';
 import './bodyoflogin.css';
+import { Alert } from 'react-bootstrap';
 class Loginbody extends Component{
     constructor(props){
         super(props)
         this.state={
             loginup:true,
+            emptyl:false,
+            emptys:false,
+            wrongl:false,
+            passwordsize:false,
             name:'',
             semail:'',
             suname:'',
@@ -96,9 +101,16 @@ class Loginbody extends Component{
         })
         console.log('pass',this.state.spass)
     }
-    registerer=()=>{
+    registerer=(event)=>{
         if(this.state.semail=='' || this.state.spass=='' || this.state.suname==''){
             alert('Email, Name or password cannot be empty')
+            event.preventDefault()
+            return
+        }
+        var checkpass=this.state.spass
+        if(checkpass.length<8){
+            alert('Password should atleastcontain 8 letters')
+            event.preventDefault()
             return
         }
         var data={
@@ -148,7 +160,7 @@ class Loginbody extends Component{
             
     }
     render(){
-        var {semail,suname,spass,lemail,lpass,loginup}=this.state
+        var {semail,suname,spass,lemail,lpass,loginup,emptyl,wrongl,emptys,passwordsize}=this.state
         console.log(loginup)
         if(loginup==true){
             return (
@@ -162,6 +174,8 @@ class Loginbody extends Component{
                         </div>
                         <div className="tabs">
                         <form className="form">
+                        <Alert variant={"danger"} show={wrongl}>Wrong Email-id or Password</Alert>
+                        <Alert variant={"danger"} show={emptyl}>Email-id or Password cannot be empty</Alert>
                             <div className="inputs">
                                 <div className="input">
                                     <input placeholder="Email-id" value={lemail} type="text" onChange={this.clemail}/>
@@ -189,6 +203,8 @@ class Loginbody extends Component{
                         </div>
                         <div className="tabs">
                         <form className="form">
+                        <Alert variant={"danger"} show={emptys}>Name , E-mail or Password cannot be empty</Alert>
+                        <Alert variant={"danger"} show={passwordsize}>Password should contain atleast 8 characters</Alert>
                             <div className="inputs">
                                 <div className="input">
                                     <input placeholder="Username" value={suname} type="text" onChange={this.csname}/>
@@ -200,7 +216,7 @@ class Loginbody extends Component{
                                     <input placeholder="Password" value={spass} type="password" onChange={this.cspassword}/>
                                 </div>
                             </div>
-                            <button className="button" onClick={this.registerer}>Register</button>
+                            <button className="button" onClick={this.registerer}>Register</button><br/>
                         </form>
                         </div>
                     </div>
