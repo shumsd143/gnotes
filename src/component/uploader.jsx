@@ -45,7 +45,7 @@ class Uploader extends Component{
                 'Content-Type':'multipart/form-data'
             }
         }).then(res=>{
-            axios.post('http://localhost:5000/personalfile/posting',postervalue).then(res=>{
+            axios.post('https://apinotessh.herokuapp.com/personalfile/posting',postervalue).then(res=>{
                 this.setState({
                     activate:false,
                     urlvalue:'',

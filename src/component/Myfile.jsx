@@ -13,7 +13,7 @@ class Myfile extends Component{
         console.log(this.props.finalname)
     }
     fetcher=()=>{
-        fetch('http://localhost:5000/personalfile/getting')
+        fetch('https://apinotessh.herokuapp.com/personalfile/getting')
         .then(res=>res.json())
         .then(json=>{
             var iterator=json.data
