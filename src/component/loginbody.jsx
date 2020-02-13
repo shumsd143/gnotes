@@ -23,6 +23,10 @@ class Loginbody extends Component{
     logger=()=>{
         this.setState({
             loginup:true,
+            emptyl:false,
+            emptys:false,
+            wrongl:false,
+            passwordsize:false,
             name:'',   
             semail:this.state.semail,
             suname:this.state.suname,
@@ -34,6 +38,10 @@ class Loginbody extends Component{
     signer=()=>{
         this.setState({
             loginup:false,
+            emptyl:false,
+            emptys:false,
+            wrongl:false,
+            passwordsize:false,
             name:'',
             semail:this.state.semail,
             suname:this.state.suname,
@@ -46,6 +54,10 @@ class Loginbody extends Component{
         //console.log(event.target.value)
         this.setState({
             loginup:true,
+            emptyl:false,
+            emptys:false,
+            wrongl:false,
+            passwordsize:false,
             name:'',
             semail:this.state.semail,
             suname:this.state.suname,
@@ -57,6 +69,10 @@ class Loginbody extends Component{
     clpass=(event)=>{
         this.setState({
             loginup:true,
+            emptyl:false,
+            emptys:false,
+            wrongl:false,
+            passwordsize:false,
             name:'',
             semail:this.state.semail,
             suname:this.state.suname,
@@ -68,6 +84,10 @@ class Loginbody extends Component{
     csname=(event)=>{
         this.setState({
             loginup:false,
+            emptyl:false,
+            emptys:false,
+            wrongl:false,
+            passwordsize:false,
             name:'',
             semail:this.state.semail,
             suname:event.target.value,
@@ -80,6 +100,10 @@ class Loginbody extends Component{
     csemail=(event)=>{
         this.setState({
             loginup:false,
+            emptyl:false,
+            emptys:false,
+            wrongl:false,
+            passwordsize:false,
             name:'',
             semail:event.target.value,
             suname:this.state.suname,
@@ -92,6 +116,10 @@ class Loginbody extends Component{
     cspassword=(event)=>{
         this.setState({
             loginup:false,
+            emptyl:false,
+            emptys:false,
+            wrongl:false,
+            passwordsize:false,
             name:'',
             semail:this.state.semail,
             suname:this.state.suname,
@@ -103,13 +131,37 @@ class Loginbody extends Component{
     }
     registerer=(event)=>{
         if(this.state.semail=='' || this.state.spass=='' || this.state.suname==''){
-            alert('Email, Name or password cannot be empty')
             event.preventDefault()
+            this.setState({
+                loginup:false,
+                emptyl:false,
+                emptys:true,
+                wrongl:false,
+                passwordsize:false,
+                name:'',
+                semail:this.state.semail,
+                suname:this.state.suname,
+                spass:this.state.spass,
+                lemail:this.state.lemail,
+                lpass:this.state.lpass
+            })
             return
         }
         var checkpass=this.state.spass
         if(checkpass.length<8){
-            alert('Password should atleastcontain 8 letters')
+            this.setState({
+                loginup:false,
+                emptyl:false,
+                emptys:false,
+                wrongl:false,
+                passwordsize:true,
+                name:'',
+                semail:this.state.semail,
+                suname:this.state.suname,
+                spass:this.state.spass,
+                lemail:this.state.lemail,
+                lpass:this.state.lpass
+            })
             event.preventDefault()
             return
         }
@@ -132,7 +184,19 @@ class Loginbody extends Component{
     }
     loginer=(event)=>{
         if(this.state.lemail=='' || this.state.lpass==''){
-            alert('email or password cannot be empty')
+            this.setState({
+                loginup:this.state.loginup,
+                emptyl:true,
+                emptys:false,
+                wrongl:false,
+                passwordsize:false,
+                name:'',
+                semail:this.state.semail,
+                suname:this.state.suname,
+                spass:this.state.spass,
+                lemail:this.state.lemail,
+                lpass:this.state.lpass
+            })
             event.preventDefault()
             return
         }
@@ -149,12 +213,36 @@ class Loginbody extends Component{
                     this.props.updatesign(arr[0].username)
                 }
                 else{
-                    alert('Wrong password')
+                    this.setState({
+                        loginup:this.state.loginup,
+                        emptyl:false,
+                        emptys:false,
+                        wrongl:true,
+                        passwordsize:false,
+                        name:'',
+                        semail:this.state.semail,
+                        suname:this.state.suname,
+                        spass:this.state.spass,
+                        lemail:this.state.lemail,
+                        lpass:this.state.lpass
+                    })
                     //event.preventDefault()
                 }
             }
             else{
-                alert('Wrong e-mail')
+                this.setState({
+                    loginup:this.state.loginup,
+                    emptyl:false,
+                    emptys:false,
+                    wrongl:true,
+                    passwordsize:false,
+                    name:'',
+                    semail:this.state.semail,
+                    suname:this.state.suname,
+                    spass:this.state.spass,
+                    lemail:this.state.lemail,
+                    lpass:this.state.lpass
+                })
             }
         })
             

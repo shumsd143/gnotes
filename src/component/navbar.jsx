@@ -142,10 +142,11 @@ class Navbarer extends Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link href="" onClick={this.homechange}>Home</Nav.Link>
-                            <Nav.Link href="" onClick={this.uploadchange}>Upload a file</Nav.Link>
+                            <Nav.Link href="" onClick={this.uploadchange}>My Uploads</Nav.Link>
                             <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
                         </Nav>
-                        <Nav.Link href="" onClick={this.clicksign} activate={signup}>Hi {name} , {signvalue}</Nav.Link>
+                        <Nav.Link  >Hi {name}</Nav.Link>
+                        <Nav.Link href="" onClick={this.clicksign} activate={signup}>{signvalue}</Nav.Link>
                     </Navbar.Collapse>
                     </Navbar>
                     <Forum/>
@@ -161,13 +162,14 @@ class Navbarer extends Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link href="" onClick={this.homechange}>Home</Nav.Link>
-                            <Nav.Link href="" onClick={this.uploadchange}>Upload a file</Nav.Link>
+                            <Nav.Link href="" onClick={this.uploadchange}>My Uploads</Nav.Link>
                             <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
                         </Nav>
-                        <Nav.Link href="" onClick={this.clicksign} activate={signup}>Hi {name} , {signvalue}</Nav.Link>
+                        <Nav.Link  >Hi {name}</Nav.Link>
+                        <Nav.Link href="" onClick={this.clicksign} activate={signup}> , {signvalue}</Nav.Link>
                     </Navbar.Collapse>
                     </Navbar>
-                    <Uploader/>
+                    <Uploader owner={name}/>
                 </div>
             )
         }
@@ -181,10 +183,11 @@ class Navbarer extends Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link href="" onClick={this.homechange}>Home</Nav.Link>
-                            <Nav.Link href="" onClick={this.uploadchange}>Upload a file</Nav.Link>
+                            <Nav.Link href="" onClick={this.uploadchange}>My Uploads</Nav.Link>
                             <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
                         </Nav>
-                        <Nav.Link href="" onClick={this.clicksign}>Hi {name} , {signvalue}</Nav.Link>
+                        <Nav.Link  >Hi {name}</Nav.Link>
+                        <Nav.Link href="" onClick={this.clicksign} activate={signup}>{signvalue}</Nav.Link>
                         <Modal className="bodyblowmodal" isOpen={signup} toggle={this.toggle} external={externalCloseBtn}>
                         <ModalBody className="modalbackground">  
                             <Loginbody updatesign={(loginname)=>this.loginnamefun(loginname)} />
