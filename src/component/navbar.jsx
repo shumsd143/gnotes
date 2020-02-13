@@ -137,7 +137,7 @@ class Navbarer extends Component{
             return (
                 <div>
                     <Navbar bg="light" expand="lg" sticky="top">
-                    <Navbar.Brand href="">Files Sharing Platform</Navbar.Brand>
+                    <Navbar.Brand href="#" onClick={this.homechange}>Files Sharing Platform</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
@@ -145,7 +145,7 @@ class Navbarer extends Component{
                             <Nav.Link href="" onClick={this.uploadchange}>My Uploads</Nav.Link>
                             <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
                         </Nav>
-                        <Nav.Link  >Hi {name}</Nav.Link>
+                        Hi, {name}
                         <Nav.Link href="" onClick={this.clicksign} activate={signup}>{signvalue}</Nav.Link>
                     </Navbar.Collapse>
                     </Navbar>
@@ -157,7 +157,7 @@ class Navbarer extends Component{
             return (
                 <div>
                     <Navbar bg="light" expand="lg" sticky="top">
-                    <Navbar.Brand href="">Files Sharing Platform</Navbar.Brand>
+                    <Navbar.Brand href="#" onClick={this.homechange}>Files Sharing Platform</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
@@ -165,7 +165,7 @@ class Navbarer extends Component{
                             <Nav.Link href="" onClick={this.uploadchange}>My Uploads</Nav.Link>
                             <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
                         </Nav>
-                        <Nav.Link  >Hi {name}</Nav.Link>
+                        Hi, {name}
                         <Nav.Link href="" onClick={this.clicksign} activate={signup}> , {signvalue}</Nav.Link>
                     </Navbar.Collapse>
                     </Navbar>
@@ -178,7 +178,7 @@ class Navbarer extends Component{
             return (
                 <div>
                     <Navbar bg="light" expand="lg" sticky="top">
-                    <Navbar.Brand href="">Files Sharing Platform</Navbar.Brand>
+                    <Navbar.Brand href="#" onClick={this.homechange}>Files Sharing Platform</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
@@ -186,7 +186,7 @@ class Navbarer extends Component{
                             <Nav.Link href="" onClick={this.uploadchange}>My Uploads</Nav.Link>
                             <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
                         </Nav>
-                        <Nav.Link  >Hi {name}</Nav.Link>
+                        Hi, {name}
                         <Nav.Link href="" onClick={this.clicksign} activate={signup}>{signvalue}</Nav.Link>
                         <Modal className="bodyblowmodal" isOpen={signup} toggle={this.toggle} external={externalCloseBtn}>
                         <ModalBody className="modalbackground">  

@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import {Navbar,Form,FormControl,Button,Nav} from 'react-bootstrap'
+import {Navbar,Form,FormControl,Button,Nav,Alert} from 'react-bootstrap'
 import Imagebody from './imagebody'
 import './bodyallfile.css';
 class Allfile extends React.Component{
@@ -37,8 +37,7 @@ class Allfile extends React.Component{
                 s1.push(data)
             }
         })
-
-        var final=s2.concat(s1)
+        var final=s2
         this.setState({
             fixeditem:this.state.fixeditem,
             sortitems:final
@@ -46,6 +45,25 @@ class Allfile extends React.Component{
     }
     render(){
         var {sortitems}=this.state
+        if(sortitems.length==0){
+            return (
+                <div>
+                    <Navbar bg="light" variant="light">
+                        <Navbar.Brand>All Files</Navbar.Brand>
+                        <Nav className="mr-auto">
+                        </Nav>
+                        <Form inline>
+                        <FormControl type="text" placeholder="Search for Files" className="mr-sm-2" onChange={this.changer}/>
+                        <Button variant="outline-primary">Search</Button>
+                        </Form>
+                    </Navbar><br/>
+                    <Alert variant='danger'>
+                        No Related Files to show
+                    </Alert>
+                </div>
+            )
+        }
+        else{
             return (
                 <div>
                     <Navbar bg="light" variant="light">
@@ -64,6 +82,7 @@ class Allfile extends React.Component{
                     </div><br/>
                 </div>
             )
+        }
     }
 }
 
