@@ -75,7 +75,7 @@ class Allfile extends React.Component{
                         <Button variant="outline-primary">Search</Button>
                         </Form>
                     </Navbar><br/>
-                    <div className="adjustfile">
+                    <div className="tabular">
                     <Table striped>
                         <thead>
                             <tr>

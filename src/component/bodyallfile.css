@@ -3,7 +3,8 @@
     max-height: 500px;
 }
 .adjustfile{
-    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
 }
 .filecompo{
     background-color:black;
@@ -41,5 +42,6 @@
     margin-top: 3%;
 }
 .tabular{
-    color: black;
+    min-width: 350px;
+    overflow-y: scroll;
 }
