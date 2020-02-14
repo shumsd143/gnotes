@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
-import {Navbar,Form,FormControl,Button,Nav,Alert} from 'react-bootstrap'
-import Imagebody from './imagebody'
+import {Navbar,Form,FormControl,Button,Nav,Alert,Table} from 'react-bootstrap'
+import Tableview from './Tableview'
 import './bodyallfile.css';
 class Allfile extends React.Component{
     constructor(props){
@@ -76,15 +76,28 @@ class Allfile extends React.Component{
                         </Form>
                     </Navbar><br/>
                     <div className="adjustfile">
-                        {sortitems.map(data=>
-                            <Imagebody filer={data} key={data}/>
-                        )}
+                    <Table striped>
+                        <thead>
+                            <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Date Modified</th>
+                            <th>Uploaded by</th>
+                            <th>Size</th>
+                            <th>ContentType</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {sortitems.map(data=>
+                                <Tableview filer={data} key={data.filename} owned={this.props.nextstage}/>
+                            )}
+                        </tbody>
+                    </Table>
                     </div><br/>
                 </div>
             )
         }
     }
 }
-
 
 export default Allfile

@@ -196,7 +196,7 @@ class Navbarer extends Component{
                     </Navbar.Collapse>
                     </Navbar>
                     <Bodyallfile />
-                        <Allfile propers={this.props.propers}/>
+                        <Allfile propers={this.props.propers} nextstage={this.props.nexter}/>
                     <Endbar/>
                 </div>
             )
