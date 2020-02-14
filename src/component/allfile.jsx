@@ -74,7 +74,7 @@ class Allfile extends React.Component{
     }
     render(){
         var {valurl,sortitems,dropdownvalue}=this.state
-        console.log(sortitems)
+        //console.log(sortitems)
         if(sortitems.length==0){
             return (
                 <div>

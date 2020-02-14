@@ -20,7 +20,7 @@ class Imagebody extends Component{
                 <Card.Header>{title}</Card.Header>
                 <Card.Body>
                 <Card.Title>
-                <Nav.Link href={url}>
+                <Nav.Link href={url} target="_blank">
                     View file
                 </Nav.Link></Card.Title>
                 </Card.Body>

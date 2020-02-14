@@ -58,7 +58,7 @@ class Uploader extends Component{
 
     render(){
         var {activate,urlvalue,clicker}=this.state
-        console.log(activate)
+        //console.log(activate)
         if(activate==true){
             return (
                 <div className="head">
@@ -81,7 +81,7 @@ class Uploader extends Component{
                                 </div>
                                 <Button color="primary" size="lg"className="buttonchange" block>Upload</Button>
                             </FormGroup>
-                            <Myfile finalname={this.props.owner}/>
+                            <Myfile finalname={this.props.owner} allfileavail={this.props.aller}/>
                         </Form>
                     </div>
                 </div>
@@ -101,7 +101,7 @@ class Uploader extends Component{
                                 <Button color="primary" size="lg"className="buttonchange" onClick={this.clickchange} block>Upload</Button>
                             </FormGroup>
                             <br/>
-                            <Myfile finalname={this.props.owner}/>
+                            <Myfile finalname={this.props.owner} allfileavail={this.props.aller}/>
                         </Form>
                     </div>
                 </div>

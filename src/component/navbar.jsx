@@ -166,15 +166,15 @@ class Navbarer extends Component{
                             <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
                         </Nav>
                         Hi, {name}
-                        <Nav.Link href="" onClick={this.clicksign} activate={signup}> , {signvalue}</Nav.Link>
+                        <Nav.Link href="" onClick={this.clicksign} activate={signup}>{signvalue}</Nav.Link>
                     </Navbar.Collapse>
                     </Navbar>
-                    <Uploader owner={name}/>
+                    <Uploader owner={name} aller={this.props.propers}/>
                 </div>
             )
         }
         else{
-            const externalCloseBtn =<ButtonToggle color="danger" style={{ position: 'absolute', right: '30%',border: '0px solid #121212'}} onClick={this.toggle}>&times;</ButtonToggle>
+            const externalCloseBtn =<ButtonToggle color="danger" style={{ position: 'absolute', right: '15px' }} onClick={this.toggle}>&times;</ButtonToggle>
             return (
                 <div>
                     <Navbar bg="light" expand="lg" sticky="top">

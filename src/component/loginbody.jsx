@@ -249,7 +249,7 @@ class Loginbody extends Component{
     }
     render(){
         var {semail,suname,spass,lemail,lpass,loginup,emptyl,wrongl,emptys,passwordsize}=this.state
-        console.log(loginup)
+        //console.log(loginup)
         if(loginup==true){
             return (
                 <div className="align">

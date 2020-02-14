@@ -1,7 +1,7 @@
-import Imagebody from './imagebody'
+import Myfilebody from './Myfilebody'
 import React,{ Component } from 'react';
 import {Alert,Form,Button,Badge,FormControl,Navbar,Nav} from 'react-bootstrap'
-import { Breadcrumb, BreadcrumbItem,Spinner } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem,Spinner,Table } from 'reactstrap';
 import './bodyallfile.css';
 class Myfile extends Component{
     constructor(props){
@@ -10,7 +10,7 @@ class Myfile extends Component{
             fileloaded:false,
             item:[]
         }
-        console.log(this.props.finalname)
+        //console.log(this.props.allfileavail)
     }
     fetcher=()=>{
         fetch('https://apinotessh.herokuapp.com/personalfile/getting')
@@ -18,9 +18,14 @@ class Myfile extends Component{
         .then(json=>{
             var iterator=json.data
             var arr=[]
+            var arr1=this.props.allfileavail
             iterator.map(data=>{
                 if(data.name==this.props.finalname){
-                    arr.push(data.filename)
+                    arr1.map(originaldata=>{
+                        if(originaldata.filename==data.filename){
+                            arr.push(originaldata)
+                        }
+                    })
                 }
             })
             this.setState({
@@ -31,10 +36,14 @@ class Myfile extends Component{
     }
     componentDidMount(){
         this.fetcher();
+        this.interval=setInterval(()=>{this.fetcher()},500)
+    }
+    componentWillUnmount() {
+      clearInterval(this.interval);
     }
     render(){
         var {fileloaded,item}=this.state
-        console.log(item)
+        //console.log(item)
         if(fileloaded==false){
             return (
                 <div>
@@ -69,7 +78,7 @@ class Myfile extends Component{
                     </Navbar>
                     <br/>
                     <Alert variant='danger'>
-                        No Files to show
+                        You Have not uploaded any files yet
                     </Alert>
                 </div>
             )
@@ -87,10 +96,24 @@ class Myfile extends Component{
                         </Form> */}
                     </Navbar>
                     <br/>
-                    <div className="adjustfile">
-                        {item.map(seconddata=>
-                            <Imagebody filer={seconddata} />
-                        )}
+                    <div className="tablet">
+                        <Table striped>
+                            <thead>
+                                <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Date Modified</th>
+                                <th></th>
+                                <th>Size</th>
+                                <th>ContentType</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {item.map(data=>
+                                    <Myfilebody filer={data} key={data._id} />
+                                )}
+                            </tbody>
+                        </Table>
                     </div><br/>
                 </div>
             )
