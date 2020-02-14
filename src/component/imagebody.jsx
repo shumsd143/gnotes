@@ -16,7 +16,7 @@ class Imagebody extends Component{
         var {url,title}=this.state
         //console.log(url,title)
         return (
-            <Card bg="dark" text="white" style={{ width: '18rem' }} className="filecompo">
+            <Card bg="dark" text="white" style={{ 'min-width': '20rem','margin':'25px' }} className="filecompo">
                 <Card.Header>{title}</Card.Header>
                 <Card.Body>
                 <Card.Title>
