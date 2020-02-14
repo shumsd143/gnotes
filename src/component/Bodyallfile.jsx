@@ -56,24 +56,13 @@ class Bodyallfile extends Component{
         //console.log(allitem)
         return (
             <div>
-                <Carousel>
-                    {imgitems.map(data=>
-                        <Carousel.Item>
-                        <img
-                          className="adjust"
-                          src={data}
-                          alt="First slide"
-                        />
-                      </Carousel.Item>
-                    )}
-                </Carousel>
                 <br/>
                 <Alert variant="secondary">
                     Recently uploaded files
                 </Alert>
                 <div className="adjustfile">
                     {items.map(seconddata=>
-                        <Imagebody filer={seconddata} />
+                        <Imagebody filer={seconddata} id={seconddata} />
                     )}
                 </div><br/>
             </div>

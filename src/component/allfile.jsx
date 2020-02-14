@@ -17,34 +17,36 @@ class Allfile extends React.Component{
             return 0
         })
         this.state={
-            fixeditem:n,
+            valurl:'',
+            finalitem:n,
             sortitems:n
         }
-
     }
     changer=(event)=>{
         var s=event.target.value
-        var arr=this.state.fixeditem
+        var arr=this.state.finalitem
         var s2=[]
-        var s1=[]
+        if(s.length>0){
         arr.map(data=>{
-            var str=data
+            var str=data.filename
             var size=s.length
             if(str.slice(0,size).toUpperCase()===s.toUpperCase()){
-                s2.push(str)
+                s2.push(data)
             }
-            else{
-                s1.push(data)
-            }
-        })
+        })}
+        else{
+            s2=arr
+        }
         var final=s2
         this.setState({
-            fixeditem:this.state.fixeditem,
+            valurl:s,
+            finalitem:this.state.finalitem,
             sortitems:final
         })
     }
     render(){
-        var {sortitems}=this.state
+        var {valurl,sortitems}=this.state
+        console.log(sortitems)
         if(sortitems.length==0){
             return (
                 <div>
@@ -53,8 +55,7 @@ class Allfile extends React.Component{
                         <Nav className="mr-auto">
                         </Nav>
                         <Form inline>
-                        <FormControl type="text" placeholder="Search for Files" className="mr-sm-2" onChange={this.changer}/>
-                        <Button variant="outline-primary">Search</Button>
+                        <FormControl type="text" placeholder="Search for Files" value={valurl} className="mr-sm-2" onChange={this.changer}/>
                         </Form>
                     </Navbar><br/>
                     <Alert variant='danger'>
@@ -71,8 +72,7 @@ class Allfile extends React.Component{
                         <Nav className="mr-auto">
                         </Nav>
                         <Form inline>
-                        <FormControl type="text" placeholder="Search for Files" className="mr-sm-2" onChange={this.changer}/>
-                        <Button variant="outline-primary">Search</Button>
+                            <FormControl type="text" placeholder="Search for Files" value={valurl} className="mr-sm-2" onChange={this.changer}/>
                         </Form>
                     </Navbar><br/>
                     <div className="tabular">
@@ -89,7 +89,7 @@ class Allfile extends React.Component{
                         </thead>
                         <tbody>
                             {sortitems.map(data=>
-                                <Tableview filer={data} key={data.filename} owned={this.props.nextstage}/>
+                                <Tableview filer={data} key={data._id} owned={this.props.nextstage}/>
                             )}
                         </tbody>
                     </Table>
