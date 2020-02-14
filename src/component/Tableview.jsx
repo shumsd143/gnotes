@@ -42,8 +42,8 @@ class Tableview extends React.Component{
         if(content=='jpeg' || content=='jpg' || content=='png'){
             return (
                 <tr>
-                    <th scope="row"><GoFileMedia className="fileadjuster"/></th>
-                    <td><a className="tabular" href={link}>{name}</a></td>
+                    <th scope="row"><a className="tabular" href={link}><GoFileMedia className="fileadjuster"/></a></th>
+                    <td>{name}</td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
@@ -54,8 +54,8 @@ class Tableview extends React.Component{
         else if(content=='pdf'){
             return (
                 <tr>
-                    <th scope="row"><GoFilePdf className="fileadjuster"/></th>
-                    <td><a className="tabular" href={link}>{name}</a></td>
+                    <th scope="row"><a className="tabular" href={link}><GoFilePdf className="fileadjuster"/></a></th>
+                    <td>{name}</td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
@@ -66,8 +66,8 @@ class Tableview extends React.Component{
         else if(content=='ppt'){
             return (
                 <tr>
-                    <th scope="row"><AiFillFilePpt className="fileadjuster"/></th>
-                    <td><a className="tabular" href={link}>{name}</a></td>
+                    <th scope="row"><a className="tabular" href={link}><AiFillFilePpt className="fileadjuster"/></a></th>
+                    <td>{name}</td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
@@ -78,8 +78,8 @@ class Tableview extends React.Component{
         else if(content=='docx'){
             return (
                 <tr>
-                    <th scope="row"><AiFillFileWord className="fileadjuster"/></th>
-                    <td><a className="tabular" href={link}>{name}</a></td>
+                    <th scope="row"><a className="tabular" href={link}><AiFillFileWord className="fileadjuster"/></a></th>
+                    <td>{name}</td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
@@ -90,8 +90,8 @@ class Tableview extends React.Component{
         else{
             return (
                 <tr>
-                    <th scope="row"><GoFile className="fileadjuster"/></th>
-                    <td><a className="tabular" href={link}>{name}</a></td>
+                    <th scope="row"><a className="tabular" href={link}><GoFile className="fileadjuster"/></a></th>
+                    <td>{name}</td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
