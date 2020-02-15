@@ -11,6 +11,7 @@ class Loginbody extends Component{
             emptys:false,
             wrongl:false,
             passwordsize:false,
+            validemail:false,
             name:'',
             semail:'',
             suname:'',
@@ -18,7 +19,7 @@ class Loginbody extends Component{
             lemail:'',
             lpass:''
         }
-        console.log(this.props.updatesign)
+        //console.log(this.props.updatesign)
     }
     logger=()=>{
         this.setState({
@@ -27,6 +28,7 @@ class Loginbody extends Component{
             emptys:false,
             wrongl:false,
             passwordsize:false,
+            validemail:false,
             name:'',   
             semail:this.state.semail,
             suname:this.state.suname,
@@ -42,6 +44,7 @@ class Loginbody extends Component{
             emptys:false,
             wrongl:false,
             passwordsize:false,
+            validemail:false,
             name:'',
             semail:this.state.semail,
             suname:this.state.suname,
@@ -58,6 +61,7 @@ class Loginbody extends Component{
             emptys:false,
             wrongl:false,
             passwordsize:false,
+            validemail:false,
             name:'',
             semail:this.state.semail,
             suname:this.state.suname,
@@ -73,6 +77,7 @@ class Loginbody extends Component{
             emptys:false,
             wrongl:false,
             passwordsize:false,
+            validemail:false,
             name:'',
             semail:this.state.semail,
             suname:this.state.suname,
@@ -88,6 +93,7 @@ class Loginbody extends Component{
             emptys:false,
             wrongl:false,
             passwordsize:false,
+            validemail:false,
             name:'',
             semail:this.state.semail,
             suname:event.target.value,
@@ -95,7 +101,7 @@ class Loginbody extends Component{
             lemail:this.state.lemail,
             lpass:this.state.lpass
         })
-        console.log('name',this.state.suname)
+        //console.log('name',this.state.suname)
     }
     csemail=(event)=>{
         this.setState({
@@ -104,6 +110,7 @@ class Loginbody extends Component{
             emptys:false,
             wrongl:false,
             passwordsize:false,
+            validemail:false,
             name:'',
             semail:event.target.value,
             suname:this.state.suname,
@@ -111,7 +118,7 @@ class Loginbody extends Component{
             lemail:this.state.lemail,
             lpass:this.state.lpass
         })
-        console.log('email',this.state.semail)
+        //console.log('email',this.state.semail)
     }
     cspassword=(event)=>{
         this.setState({
@@ -120,6 +127,7 @@ class Loginbody extends Component{
             emptys:false,
             wrongl:false,
             passwordsize:false,
+            validemail:false,
             name:'',
             semail:this.state.semail,
             suname:this.state.suname,
@@ -127,7 +135,7 @@ class Loginbody extends Component{
             lemail:this.state.lemail,
             lpass:this.state.lpass
         })
-        console.log('pass',this.state.spass)
+        //console.log('pass',this.state.spass)
     }
     registerer=(event)=>{
         if(this.state.semail=='' || this.state.spass=='' || this.state.suname==''){
@@ -138,6 +146,7 @@ class Loginbody extends Component{
                 emptys:true,
                 wrongl:false,
                 passwordsize:false,
+                validemail:false,
                 name:'',
                 semail:this.state.semail,
                 suname:this.state.suname,
@@ -155,6 +164,27 @@ class Loginbody extends Component{
                 emptys:false,
                 wrongl:false,
                 passwordsize:true,
+                validemail:false,
+                name:'',
+                semail:this.state.semail,
+                suname:this.state.suname,
+                spass:this.state.spass,
+                lemail:this.state.lemail,
+                lpass:this.state.lpass
+            })
+            event.preventDefault()
+            return
+        }
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if(reg.test(this.state.semail) == false)
+        {
+            this.setState({
+                loginup:false,
+                emptyl:false,
+                emptys:false,
+                wrongl:false,
+                passwordsize:false,
+                validemail:true,
                 name:'',
                 semail:this.state.semail,
                 suname:this.state.suname,
@@ -173,6 +203,11 @@ class Loginbody extends Component{
         axios.post('https://apinotessh.herokuapp.com/student/loginpost',data).then(res=>{
             this.setState({
                 loginup:true,
+                emptyl:false,
+                emptys:false,
+                wrongl:false,
+                passwordsize:false,
+                validemail:false,
                 name:'',
                 semail:'',
                 suname:'',
@@ -190,6 +225,7 @@ class Loginbody extends Component{
                 emptys:false,
                 wrongl:false,
                 passwordsize:false,
+                validemail:false,
                 name:'',
                 semail:this.state.semail,
                 suname:this.state.suname,
@@ -219,6 +255,7 @@ class Loginbody extends Component{
                         emptys:false,
                         wrongl:true,
                         passwordsize:false,
+                        validemail:false,
                         name:'',
                         semail:this.state.semail,
                         suname:this.state.suname,
@@ -236,6 +273,7 @@ class Loginbody extends Component{
                     emptys:false,
                     wrongl:true,
                     passwordsize:false,
+                    validemail:false,
                     name:'',
                     semail:this.state.semail,
                     suname:this.state.suname,
@@ -248,7 +286,7 @@ class Loginbody extends Component{
             
     }
     render(){
-        var {semail,suname,spass,lemail,lpass,loginup,emptyl,wrongl,emptys,passwordsize}=this.state
+        var {semail,suname,spass,lemail,lpass,loginup,emptyl,wrongl,emptys,passwordsize,validemail}=this.state
         //console.log(loginup)
         if(loginup==true){
             return (
@@ -293,6 +331,7 @@ class Loginbody extends Component{
                         <form className="form">
                         <Alert variant={"danger"} show={emptys}>Name , E-mail or Password cannot be empty</Alert>
                         <Alert variant={"danger"} show={passwordsize}>Password should contain atleast 8 characters</Alert>
+                        <Alert variant={"danger"} show={validemail}>Please enter valid e-mail</Alert>
                             <div className="inputs">
                                 <div className="input">
                                     <input placeholder="Username" value={suname} type="text" onChange={this.csname}/>

@@ -174,7 +174,7 @@ class Navbarer extends Component{
             )
         }
         else{
-            const externalCloseBtn =<ButtonToggle color="danger" style={{ position: 'absolute', right: '15px' }} onClick={this.toggle}>&times;</ButtonToggle>
+            const externalCloseBtn = <button className="close" style={{ position: 'absolute' }} onClick={this.toggle}>&times;</button>;
             return (
                 <div>
                     <Navbar bg="light" expand="lg" sticky="top">
