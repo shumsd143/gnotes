@@ -31,7 +31,7 @@ class Myfilebody extends React.Component{
         }
     }
     deleter=(event)=>{
-        var c=window.confirm('Are you sure you want to log out')
+        var c=window.confirm('Are you sure you want to delete this file')
         if(c==true){
             fetch('https://apinotessh.herokuapp.com/files/'+this.props.filer._id,{method:'DELETE'}).then((res)=>{
                 
