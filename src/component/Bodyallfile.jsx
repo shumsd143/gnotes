@@ -37,7 +37,7 @@ class Bodyallfile extends Component{
                 }
             })
             var size=arr2.length
-            for(var i=size-1;i>size-5;i--){
+            for(var i=size-1;i>size-6;i--){
                 arr3.push(arr2[i])
             }
             this.setState({
