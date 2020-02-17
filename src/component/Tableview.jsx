@@ -43,7 +43,7 @@ class Tableview extends React.Component{
             return (
                 <tr>
                     <th scope="row"><a className="tabular" href={link} target="_blank"><GoFileMedia className="fileadjuster"/></a></th>
-                    <td>{name}</td>
+                    <td><a className="tabular" href={link} target="_blank">{name}</a></td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
@@ -55,7 +55,7 @@ class Tableview extends React.Component{
             return (
                 <tr>
                     <th scope="row"><a className="tabular" href={link} target="_blank"><GoFilePdf className="fileadjuster"/></a></th>
-                    <td>{name}</td>
+                    <td><a className="tabular" href={link} target="_blank">{name}</a></td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
@@ -67,7 +67,7 @@ class Tableview extends React.Component{
             return (
                 <tr>
                     <th scope="row"><a className="tabular" href={link} target="_blank"><AiFillFilePpt className="fileadjuster"/></a></th>
-                    <td>{name}</td>
+                    <td><a className="tabular" href={link} target="_blank">{name}</a></td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
@@ -79,7 +79,7 @@ class Tableview extends React.Component{
             return (
                 <tr>
                     <th scope="row"><a className="tabular" href={link} target="_blank"><AiFillFileWord className="fileadjuster"/></a></th>
-                    <td>{name}</td>
+                    <td><a className="tabular" href={link} target="_blank">{name}</a></td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
@@ -91,7 +91,7 @@ class Tableview extends React.Component{
             return (
                 <tr>
                     <th scope="row"><a className="tabular" href={link} target="_blank"><GoFile className="fileadjuster"/></a></th>
-                    <td>{name}</td>
+                    <td><a className="tabular" href={link} target="_blank">{name}</a></td>
                     <td>{date}</td>
                     <td>{Uploadedby}</td>
                     <td>{size}</td>
