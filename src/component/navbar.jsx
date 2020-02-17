@@ -143,7 +143,7 @@ class Navbarer extends Component{
                         <Nav className="mr-auto">
                             <Nav.Link href="" onClick={this.homechange}>Home</Nav.Link>
                             <Nav.Link href="" onClick={this.uploadchange}>My Uploads</Nav.Link>
-                            <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
+                            <Nav.Link href="" onClick={this.questionchange}>QnA Threads</Nav.Link>
                         </Nav>
                         Hi, {name}
                         <Nav.Link href="" onClick={this.clicksign} activate={signup}>{signvalue}</Nav.Link>
@@ -163,7 +163,7 @@ class Navbarer extends Component{
                         <Nav className="mr-auto">
                             <Nav.Link href="" onClick={this.homechange}>Home</Nav.Link>
                             <Nav.Link href="" onClick={this.uploadchange}>My Uploads</Nav.Link>
-                            <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
+                            <Nav.Link href="" onClick={this.questionchange}>QnA Threads</Nav.Link>
                         </Nav>
                         Hi, {name}
                         <Nav.Link href="" onClick={this.clicksign} activate={signup}>{signvalue}</Nav.Link>
@@ -184,7 +184,7 @@ class Navbarer extends Component{
                         <Nav className="mr-auto">
                             <Nav.Link href="" onClick={this.homechange}>Home</Nav.Link>
                             <Nav.Link href="" onClick={this.uploadchange}>My Uploads</Nav.Link>
-                            <Nav.Link href="" onClick={this.questionchange}>QnA Forum</Nav.Link>
+                            <Nav.Link href="" onClick={this.questionchange}>QnA Threads</Nav.Link>
                         </Nav>
                         Hi, {name}
                         <Nav.Link href="" onClick={this.clicksign} activate={signup}>{signvalue}</Nav.Link>
