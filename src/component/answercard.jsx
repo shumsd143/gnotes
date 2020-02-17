@@ -9,7 +9,7 @@ class Answercard extends Component{
         var l=Array.isArray(size)
         var m=0
         if(l==false){
-            if(size==null){
+            if(size==null){ 
                 m=0
             }
             else{
@@ -59,7 +59,7 @@ class Answercard extends Component{
                         <Card.Header>{this.props.orgvalue.question}</Card.Header>
                         <ListGroup variant="flush">
                             {this.props.orgvalue.answer.map(cun=>
-                                <div><ListGroup.Item>{cun}</ListGroup.Item></div>
+                                <ListGroup.Item>{cun}</ListGroup.Item>
                             )}
                         </ListGroup>
                         <InputGroup style={{'margin-left':5},{'margin-right':5}} className="mb-3">
