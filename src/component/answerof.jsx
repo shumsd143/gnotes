@@ -62,7 +62,7 @@ class Answerof extends Component{
                 <div>
                   <Form className="questionfindform">
                   <InputGroup size="lg" className="Adjustinput">
-                    <Input placeholder="Enter the keyword" value={urlvalue} onChange={this.inputofanswer}/>
+                    <Input placeholder="Enter the keyword to be searched ..." value={urlvalue} onChange={this.inputofanswer}/>
                   </InputGroup>
                   </Form>
                 </div>

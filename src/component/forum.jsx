@@ -38,7 +38,7 @@ class Forum extends Component{
             return (
                     <div>
                         <Tabs id="controlled-tab-example" activeKey={activatevalue} onSelect={this.answerer}>
-                            <Tab eventKey="home" title="View Answer">
+                            <Tab eventKey="home" title="Threads">
                             </Tab>
                             <Tab eventKey="profile" title="Post a Question">
                             </Tab>
@@ -51,7 +51,7 @@ class Forum extends Component{
             return (
                     <div>
                         <Tabs id="controlled-tab-example" activeKey={activatevalue} onSelect={this.answerer}>
-                            <Tab eventKey="home" title="View Answer">
+                            <Tab eventKey="home" title="Threads">
                             </Tab>
                             <Tab eventKey="profile" title="Post a Question">
                             </Tab>
