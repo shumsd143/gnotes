@@ -55,7 +55,7 @@ class Navbarer extends Component{
     }
     questionchange=()=>{
         if(this.state.signvalue=='Signup'){
-            alert('Please sign in to Access QnA forum')
+            alert('Please sign in to Access QnA Thread')
             this.setState({
                 signup:true,
                 signvalue:this.state.signvalue,

@@ -1,11 +1,15 @@
 import React,{ Component } from 'react';
 import Answercard from './answercard'
-import {Spinner} from 'reactstrap'
+import {Form,InputGroup,Input,Spinner} from 'reactstrap'
+import {Alert} from 'react-bootstrap'
+import './bodyallfile.css';
 
 class Answerof extends Component{
     constructor(props){
         super(props)
         this.state={
+            urlvalue:'',
+            afterurl:[],
             items:[],
             load:false,
           }
@@ -16,6 +20,8 @@ class Answerof extends Component{
         .then(json=>{
           var arr=json.data
           this.setState({
+            urlvalue:this.state.urlvalue,
+            afterurl:this.state.afterurl,
             load:true,
             items:arr
           })
@@ -28,17 +34,78 @@ class Answerof extends Component{
       componentWillUnmount() {
         clearInterval(this.interval);
       }
+    inputofanswer=(event)=>{
+      let val=event.target.value.toLowerCase()
+      let questionarray=this.state.items
+      let shownarray=[]
+      questionarray.map((value)=>{
+        let question=value.question.toLowerCase()
+        let check=question.includes(val)
+        if(check==true){
+          shownarray.push(value)
+        }
+      })
+      this.setState({
+        urlvalue:event.target.value,
+        afterurl:shownarray,
+        load:true,
+        items:this.state.items
+      })
+    }
     render(){
-        var {load,items}=this.state
+        var {load,items,urlvalue,afterurl}=this.state
         //console.log(items)
         if(load==true){
-          return (
+          if(urlvalue==''){
+            return (
               <div>
-                  {items.map(data=>
-                      <Answercard orgvalue={data} id={data.question}/>
-                  )}
+                <div>
+                  <Form className="questionfindform">
+                  <InputGroup size="lg" className="Adjustinput">
+                    <Input placeholder="Enter the keyword" value={urlvalue} onChange={this.inputofanswer}/>
+                  </InputGroup>
+                  </Form>
+                </div>
+                {items.map(data=>
+                  <Answercard orgvalue={data} id={data.question}/>
+                )}
               </div>
-          )
+            )
+          }
+          else{
+            if(afterurl.length==0){
+              return (
+                <div>
+                  <div>
+                    <Form className="questionfindform">
+                    <InputGroup size="lg" className="Adjustinput">
+                      <Input placeholder="Enter the keyword" value={urlvalue} onChange={this.inputofanswer}/>
+                    </InputGroup>
+                    </Form>
+                  </div>
+                  <Alert variant='danger'>
+                    No Related Questions are posted please post it
+                  </Alert>
+                </div>
+              )
+            }
+            else{
+              return (
+                <div>
+                  <div>
+                    <Form className="questionfindform">
+                    <InputGroup size="lg" className="Adjustinput">
+                      <Input placeholder="Enter the keyword" value={urlvalue} onChange={this.inputofanswer}/>
+                    </InputGroup>
+                    </Form>
+                  </div>
+                  {afterurl.map(data=>
+                    <Answercard orgvalue={data} id={data.question}/>
+                  )}
+                </div>
+              )
+            }
+          }
         }
         else{
           return (
