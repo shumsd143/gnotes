@@ -1,5 +1,6 @@
 import React,{ Component } from 'react';
 import {Navbar,Form,FormControl,NavDropdown,Nav,Alert,Table} from 'react-bootstrap'
+import Bodyallfile from './Bodyallfile';
 import Tableview from './Tableview'
 import './bodyallfile.css';
 class Allfile extends React.Component{
@@ -72,24 +73,22 @@ class Allfile extends React.Component{
             sortitems:this.state.sortitems
         })
     }
+    skippart=()=>{
+        window.scrollTo(0,600);
+    }
     render(){
         var {valurl,sortitems,dropdownvalue}=this.state
         //console.log(sortitems)
         if(sortitems.length==0){
             return (
                 <div>
-                    <Navbar bg="light" variant="light">
-                        <Navbar.Brand>All Files</Navbar.Brand>
-                        <Nav className="mr-auto">
-                        </Nav>
-                        <Form inline>
-                            <FormControl type="text" placeholder="Search for Files" value={valurl} className="mr-sm-2" onChange={this.changer}/>
-                        </Form>
-                        <NavDropdown title={dropdownvalue} id="basic-nav-dropdown">
+                    <div className="inputparent">
+                        <input className="inputer" type="text" placeholder="  Search for files....." value={valurl} onChange={this.changer}/>
+                        <NavDropdown className="inputdropdown" title={dropdownvalue} id="basic-nav-dropdown">
                             <NavDropdown.Item onClick={this.dropdownfilename}>FileName</NavDropdown.Item>
                             <NavDropdown.Item onClick={this.dropdowncontent}>Content-Type</NavDropdown.Item>
                         </NavDropdown>
-                    </Navbar><br/>
+                    </div>
                     <Alert variant='danger'>
                         No Related Files to show
                     </Alert>
@@ -99,20 +98,17 @@ class Allfile extends React.Component{
         else{
             return (
                 <div>
-                    <Navbar bg="light" variant="light">
-                        <Navbar.Brand>All Files</Navbar.Brand>
-                        <Nav className="mr-auto">
-                        </Nav>
-                        <Form inline>
-                            <FormControl type="text" placeholder="Search for Files" value={valurl} className="mr-sm-2" onChange={this.changer}/>
-                        </Form>
-                        <NavDropdown title={dropdownvalue} id="basic-nav-dropdown">
+                    <div className="inputparent">
+                        <input className="inputer" type="text" placeholder="  Search for files....." value={valurl} onChange={this.changer}/>
+                        <NavDropdown className="inputdropdown" title={dropdownvalue} id="basic-nav-dropdown">
                             <NavDropdown.Item onClick={this.dropdownfilename}>FileName</NavDropdown.Item>
                             <NavDropdown.Item onClick={this.dropdowncontent}>Content-Type</NavDropdown.Item>
                         </NavDropdown>
-                    </Navbar><br/>
-                    <div className="tablet">
-                        <Table striped>
+                    </div>
+                    <center><div style={{fontWeight:1000,marginBottom:'15px'}}>or</div></center>
+                    <button className="recently" onClick={this.skippart}>Recent Uploads</button>
+                    <div className="tablet" id="tabular">
+                        <Table >
                             <thead>
                                 <tr>
                                 <th></th>
@@ -130,6 +126,14 @@ class Allfile extends React.Component{
                             </tbody>
                         </Table>
                     </div><br/>
+                    <div className="outerrecent">
+                        <br/>
+                        <br/>
+                        <div className="innerrecent">
+                            <h1 className="recentheaders">Recently Uploaded files</h1>
+                            <Bodyallfile />
+                        </div>
+                    </div>
                 </div>
             )
         }

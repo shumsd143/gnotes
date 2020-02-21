@@ -49,15 +49,15 @@ class Forum extends Component{
         }
         else{
             return (
-                    <div>
-                        <Tabs id="controlled-tab-example" activeKey={activatevalue} onSelect={this.answerer}>
-                            <Tab eventKey="home" title="Threads">
-                            </Tab>
-                            <Tab eventKey="profile" title="Post a Question">
-                            </Tab>
-                        </Tabs>
-                        <Questionof/>
-                    </div>
+                <div>
+                    <Tabs id="controlled-tab-example" activeKey={activatevalue} onSelect={this.answerer}>
+                        <Tab eventKey="home" title="Threads">
+                        </Tab>
+                        <Tab eventKey="profile" title="Post a Question">
+                        </Tab>
+                    </Tabs>
+                    <Questionof/>
+                </div>
             )
         }    
     }

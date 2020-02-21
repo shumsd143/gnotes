@@ -1,11 +1,11 @@
 import React,{ Component } from 'react';
 import Allfile from './allfile'
 import Endbar from './endbar'
-import Bodyallfile from './Bodyallfile';
 import Uploader from './uploader';
 import Forum from './forum';
 import Loginbody from './loginbody';
-import { ButtonToggle, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {  Modal, ModalBody } from 'reactstrap';
+import './bodyallfile.css';
 
 import {Navbar,Nav} from 'react-bootstrap';
 
@@ -190,13 +190,15 @@ class Navbarer extends Component{
                         <Nav.Link href="" onClick={this.clicksign} activate={signup}>{signvalue}</Nav.Link>
                         <Modal className="bodyblowmodal" isOpen={signup} toggle={this.toggle} external={externalCloseBtn}>
                         <ModalBody className="modalbackground">  
-                            <Loginbody updatesign={(loginname)=>this.loginnamefun(loginname)} />
+                        <Loginbody updatesign={(loginname)=>this.loginnamefun(loginname)} />
                         </ModalBody>
                         </Modal>
                     </Navbar.Collapse>
                     </Navbar>
-                    <Bodyallfile />
-                        <Allfile propers={this.props.propers} nextstage={this.props.nexter}/>
+                    <div className="headerchange">
+                        <h className="heading"><center>Search and Store files easily</center></h>    
+                    </div>
+                    <Allfile propers={this.props.propers} nextstage={this.props.nexter}/>
                     <Endbar/>
                 </div>
             )

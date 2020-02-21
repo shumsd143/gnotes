@@ -52,15 +52,12 @@ class Bodyallfile extends Component{
         this.fetcher();
     }
     render(){
-        var { load, imgitems, items,allitem }=this.state;
+        var { items }=this.state;
         //console.log(allitem)
         return (
             <div>
                 <br/>
-                <Alert variant="secondary">
-                    Recently uploaded files
-                </Alert>
-                <div className="adjustfile">
+                <div className="adjustfile" id="fileadjusting">
                     {items.map(seconddata=>
                         <Imagebody filer={seconddata} id={seconddata} />
                     )}
