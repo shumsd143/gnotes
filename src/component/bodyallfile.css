@@ -153,22 +153,23 @@
        background-color: #fff;
        background: linear-gradient(to right,#201c29,#201c29 1px,#100e17 1px,#100e17);
     }
+    #fileadjusting::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        border: 1px solid #d5d5d5;
+    }
+      
+    #fileadjusting::-webkit-scrollbar-track {
+        border-radius: 0;
+        background: #eeeeee;
+    }
+      
+    #fileadjusting::-webkit-scrollbar-thumb {
+        border-radius: 0;
+        background: #b0b0b0;
+    }
 }
-#fileadjusting::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-    border: 1px solid #d5d5d5;
-  }
-  
-  #fileadjusting::-webkit-scrollbar-track {
-    border-radius: 0;
-    background: #eeeeee;
-  }
-  
-#fileadjusting::-webkit-scrollbar-thumb {
-    border-radius: 0;
-    background: #b0b0b0;
-  }
+
 @media only screen and (max-width: 699px) {
     .headerchange{
         margin-top: 50px;
