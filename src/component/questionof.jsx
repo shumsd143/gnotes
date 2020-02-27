@@ -56,7 +56,7 @@ class Questionof extends Component{
     }
     render(){
         var {load,items,onquestion}=this.state
-        console.log(onquestion)
+        //console.log(onquestion)
         if(load==true){
             return (
                 <div className="addedinput">

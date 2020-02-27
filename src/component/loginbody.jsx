@@ -241,7 +241,7 @@ class Loginbody extends Component{
         .then(res=>res.json())
         .then(json=>{
             var arr=json.data
-            console.log(json.data.length)
+            //console.log(json.data.length)
             if(json.data.length){
                 var outpass=arr[0].password
                 if(outpass==this.state.lpass){

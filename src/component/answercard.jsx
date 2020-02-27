@@ -4,7 +4,7 @@ import {Card,ListGroup,InputGroup,FormControl,Button} from 'react-bootstrap'
 class Answercard extends Component{
     constructor(props){
         super(props)
-        console.log(this.props.id)
+        //console.log(this.props.id)
         var size=this.props.orgvalue.answer
         var l=Array.isArray(size)
         var m=0
@@ -32,7 +32,7 @@ class Answercard extends Component{
         })
     }
     clicker=(event)=>{
-        console.log('clicked')
+        //console.log('clicked')
         if(this.state.valueof==''){
             alert('enter text')
             return
