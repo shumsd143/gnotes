@@ -247,6 +247,8 @@ class Loginbody extends Component{
                 if(outpass==this.state.lpass){
                     //event.preventDefault()
                     this.props.updatesign(arr[0].username)
+                    localStorage.setItem('filesharinguser',arr[0].username)
+                    localStorage.setItem('filesharingemail',this.state.lemail)
                 }
                 else{
                     this.setState({

@@ -11,10 +11,20 @@ import {Navbar,Nav} from 'react-bootstrap';
 
 class Navbarer extends Component{
     constructor(props){
+        let lsuser=localStorage.getItem('filesharinguser')
+        let lsemail=localStorage.getItem('filesharingemail')
+        let lssignvalue=''
+        if(lsuser){
+            lssignvalue='Signout'
+        }
+        else{
+            lsuser='User'
+            lssignvalue='Signup'
+        }
         super(props)
         this.state={
-            name:'User',
-            signvalue:'Signup',
+            name:lsuser,
+            signvalue:lssignvalue,
             signup:false,
             home:true,
             upload:false,
@@ -87,6 +97,8 @@ class Navbarer extends Component{
                     upload:this.state.upload,
                     question:this.state.question
                 })
+                localStorage.removeItem('filesharinguser')
+                localStorage.removeItem('filesharingemail')
                 return
             }
             else{

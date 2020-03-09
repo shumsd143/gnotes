@@ -16,7 +16,6 @@ class App extends Component{
       fetch('https://apinotessh.herokuapp.com/allfileinfo')
       .then(res=>res.json())
       .then(json=>{
-      
           var arr=json.files
           var arr4=[];
           arr.map(data=>{
@@ -57,7 +56,7 @@ class App extends Component{
     else{
     return (
       <div>
-        <Navbar propers={allitem} nexter={uploadfiler}/>
+        <Navbar propers={allitem} nexter={uploadfiler} />
       </div>
     );}
   }
