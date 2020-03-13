@@ -31,7 +31,7 @@ class Answercard extends Component{
             ghi:this.state.ghi
         })
     }
-    clicker=(event)=>{
+    clicker=()=>{
         //console.log('clicked')
         if(this.state.valueof==''){
             alert('enter text')
@@ -48,6 +48,12 @@ class Answercard extends Component{
                     ghi:this.state.ghi
                 })
             })
+        }
+    }
+    keyer=(event)=>{
+        if(event.key==="Enter"){
+            console.log('done')
+            this.clicker()
         }
     }
     render(){
@@ -70,6 +76,8 @@ class Answercard extends Component{
                             value={valueof}
                             id={this.props.orgvalue.question}
                             onChange={this.newchange}
+                            onSubmit={this.clicker}
+                            onKeyPress={this.keyer}
                             />
                             <InputGroup.Append>
                             <Button variant="outline-secondary" id={this.props.orgvalue.question} onClick={this.clicker}>Submit</Button>
@@ -86,7 +94,7 @@ class Answercard extends Component{
                             <ListGroup variant="flush">
                             <div><ListGroup.Item>{this.props.orgvalue.answer}</ListGroup.Item></div>
                             </ListGroup>
-                            <InputGroup style={{'margin-left':5},{'margin-right':5}} className="mb-3">
+                            <InputGroup style={{'margin-left':5},{'margin-right':5}} className="mb-3" onSubmit={this.clicker}>
                                 <FormControl
                                 placeholder="Type your answer"
                                 aria-label="Recipient's username"
@@ -94,6 +102,8 @@ class Answercard extends Component{
                                 value={valueof}
                                 id={this.props.orgvalue.question}
                                 onChange={this.newchange}
+                                onSubmit={this.clicker}
+                                onKeyPress={this.keyer}
                                 />
                                 <InputGroup.Append>
                                 <Button variant="outline-secondary" onClick={this.clicker}>Submit</Button>
@@ -109,7 +119,7 @@ class Answercard extends Component{
                         <Card.Header>{this.props.orgvalue.question}</Card.Header>
                         <ListGroup variant="flush">
                         </ListGroup>
-                        <InputGroup style={{'margin-left':5},{'margin-right':5}} className="mb-3">
+                        <InputGroup style={{'margin-left':5},{'margin-right':5}} className="mb-3" onSubmit={this.clicker}>
                             <FormControl
                             placeholder="Type your answer"
                             aria-label="Recipient's username"
@@ -117,6 +127,8 @@ class Answercard extends Component{
                             value={valueof}
                             id={this.props.orgvalue.question}
                             onChange={this.newchange}
+                            onSubmit={this.clicker}
+                            onKeyPress={this.keyer}
                             />
                             <InputGroup.Append>
                             <Button variant="outline-secondary" onClick={this.clicker}>Submit</Button>

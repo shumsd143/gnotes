@@ -80,7 +80,7 @@
 	height: 100%;
 	max-height: 450px;
 	flex-shrink: 0;
-	padding: 44px 38px;
+	padding: 30px 38px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -96,12 +96,12 @@
 
 .inputs {
 	width: 100%;
-	padding-top: 6px;
+	padding-top: 0px;
 }
 
 .input {
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 18px;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -138,4 +138,7 @@
 	border: 1px solid #121212;
 	border-radius: 10px;
 	opacity: 1;
+}
+.alertmovement{
+	margin-top: -20px;
 }
