@@ -57,7 +57,7 @@ class Uploader extends Component{
     }
 
     render(){
-        var {activate,urlvalue,clicker}=this.state
+        var {activate}=this.state
         //console.log(activate)
         if(activate==true){
             return (

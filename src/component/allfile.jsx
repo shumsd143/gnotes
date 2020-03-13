@@ -1,5 +1,5 @@
-import React,{ Component } from 'react';
-import {Navbar,Form,FormControl,NavDropdown,Nav,Alert,Table} from 'react-bootstrap'
+import React from 'react';
+import {NavDropdown,Alert,Table} from 'react-bootstrap'
 import Bodyallfile from './Bodyallfile';
 import Tableview from './Tableview'
 import './bodyallfile.css';
@@ -89,9 +89,33 @@ class Allfile extends React.Component{
                             <NavDropdown.Item onClick={this.dropdowncontent}>Content-Type</NavDropdown.Item>
                         </NavDropdown>
                     </div>
-                    <Alert variant='danger'>
-                        No Related Files to show
-                    </Alert>
+                    <center><div style={{fontWeight:1000,marginBottom:'15px'}}>or</div></center>
+                    <button className="recently" onClick={this.skippart}>Recent Uploads</button>
+                    <div className="tablet" id="tabular">
+                        <Table >
+                            <thead>
+                                <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Date Modified</th>
+                                <th>Uploaded by</th>
+                                <th>Size</th>
+                                <th>ContentType</th>
+                                </tr>
+                            </thead>
+                        </Table>
+                        <Alert variant='danger'>
+                            No Related Files to show
+                        </Alert>      
+                    </div><br/>
+                    <div className="outerrecent">
+                        <br/>
+                        <br/>
+                        <div className="innerrecent">
+                            <h1 className="recentheaders">Recently Uploaded files</h1>
+                            <Bodyallfile />
+                        </div>
+                    </div>
                 </div>
             )
         }
