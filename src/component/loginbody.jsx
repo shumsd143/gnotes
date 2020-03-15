@@ -195,6 +195,7 @@ class Loginbody extends Component{
             this.setState({
                 passmatch:true
             })
+            event.preventDefault()
             return
         }
         var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -248,6 +249,8 @@ class Loginbody extends Component{
                 this.setState({
                     alreadyregister:true
                 })
+                event.preventDefault()
+                return
             }
         })
     }
